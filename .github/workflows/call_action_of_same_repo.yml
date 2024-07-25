@@ -1,0 +1,18 @@
+name: Call Internal Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-external-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Call action from another repository
+        uses: singwal-mohit/actionrepo/action_folder@master
+        with:
+          input1: 80
+          input2: "mohit"
