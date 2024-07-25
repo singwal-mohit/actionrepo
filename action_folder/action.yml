@@ -24,3 +24,7 @@ runs:
       shell: bash
     - run: echo "::set-output name=output2::${{ inputs.input2 }}"
       shell: bash
+
+branding:
+  icon: 'mic'
+  color: 'blue'
