@@ -1,5 +1,5 @@
-name: 'My Custom Action'
-description: 'A custom GitHub Action'
+name: 'Dummy Check Action'
+description: 'A dummy action to echo inputs'
 inputs:
   input1:
     description: 'First input'
@@ -10,10 +10,20 @@ inputs:
 outputs:
   output1:
     description: 'First output'
+  output2:
+    description: 'Second output'
 
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: 'composite'
+  steps:
+    - run: echo "Input 1: ${{ inputs.input1 }}"
+      shell: bash
+    - run: echo "Input 2: ${{ inputs.input2 }}"
+      shell: bash
+    - run: echo "::set-output name=output1::${{ inputs.input1 }}"
+      shell: bash
+    - run: echo "::set-output name=output2::${{ inputs.input2 }}"
+      shell: bash
 
 branding:
   icon: 'mic'
