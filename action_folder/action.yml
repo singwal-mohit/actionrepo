@@ -1,0 +1,20 @@
+name: 'My Custom Action'
+description: 'A custom GitHub Action'
+inputs:
+  input1:
+    description: 'First input'
+    required: true
+  input2:
+    description: 'Second input'
+    required: true
+outputs:
+  output1:
+    description: 'First output'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
+
+branding:
+  icon: 'mic'
+  color: 'blue'
